@@ -1,3 +1,14 @@
 table {
   width: 100%;
 }
+
+.loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#spin {
+  zoom: 0.65;
+}
