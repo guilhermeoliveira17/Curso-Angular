@@ -1,0 +1,32 @@
+<mat-table  [dataSource]="courses"class="mat-table">
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef class="action-column-header">Curso</mat-header-cell>
+    <mat-cell *matCellDef="let course" class="action-column">{{ course.name }}</mat-cell>
+  </ng-container>
+
+  <!-- Category Column -->
+  <ng-container matColumnDef="category">
+    <mat-header-cell *matHeaderCellDef class="action-column-header">Categoria</mat-header-cell>
+    <mat-cell *matCellDef="let course" class="action-column">{{ course.category }}
+      <mat-icon>{{course.category | category}} </mat-icon>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell  *matHeaderCellDef class="action-column-header">Ações</mat-header-cell>
+    <mat-cell  *matCellDef="let course" class="action-column">
+      <button mat-icon-button aria-label="Editar" color="accent">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-icon-button aria-label="Excluir" color="warn">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
